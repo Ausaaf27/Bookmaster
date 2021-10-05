@@ -1,0 +1,23 @@
+<div style="text-align:center">
+    <div class="container">
+  
+        
+        <table class="table table-striped">
+          <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>ISBN</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of books">
+              <td>{{ book._id }}</td>
+              <td>{{ book.title }}</td>
+              <td>{{ book.isbn }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>
+<app-book-details></app-book-details>
