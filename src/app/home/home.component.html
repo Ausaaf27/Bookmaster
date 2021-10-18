@@ -9,3 +9,27 @@
   </ul>
   
   <app-book-detail [book]="selectedBook"></app-book-detail> -->
+
+  <div>
+    <h1>My Products</h1>
+    <button type="button" [routerLink]="/crud/create/">Create new product</button>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{book.id}}</td>
+                <td>{{book.name}}</td>
+                <td>
+                    <button type="button" [routerLink]="['/crud/update/', product.id]">Update</button>
+                    <button type="button" (click)="crudService.delete(product.id)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

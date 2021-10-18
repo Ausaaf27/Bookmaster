@@ -11,14 +11,20 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from "./app.material-module";
-import { HttpClientModule} from "@angular/common/http";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { HttpClientModule, HttpClient} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
     BookDetailComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    HeaderComponent,
+    FooterComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +34,7 @@ import { HttpClientModule} from "@angular/common/http";
     BrowserAnimationsModule,
     AppMaterialModule,
     HttpClientModule,
+    HttpClient
   ],
   providers: [],
   bootstrap: [AppComponent]

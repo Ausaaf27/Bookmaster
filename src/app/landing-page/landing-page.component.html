@@ -1,0 +1,16 @@
+<div class="col-lg-12 col-md-12 col-sm-12 landing-page-container">
+    <h3 class="landing-page-header">BOOK LIST</h3>
+    <div class="col-lg-12 col-md-12 col-sm-12 landing-page-list">
+        <div class="landing-area-cards">
+            <ng-container *ngFor="let book of books;let i = index">
+                <div class="card-container">
+                    <div class="example-card">
+                        <img *ngIf="book.thumbnailUrl" [title]="book.shortDescription" mat-card-image [src]="book.thumbnailUrl" [alt]="book.title">
+                        <img *ngIf="!book.thumbnailUrl" [title]="book.shortDescription" mat-card-image src='assets/images/no-image.png' [alt]="book.title">
+                        <div class="card-title">{{ book.title }}</div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

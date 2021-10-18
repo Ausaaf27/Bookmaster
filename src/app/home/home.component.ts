@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Books } from '../books';
+import { CrudService } from 'C:/Users/arsha/Book Master/bookmaster/src/app/crud/crud.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  products: Books[] = [];
 
-  ngOnInit(): void {
+  constructor(public crudService: CrudService) { }
+
+  ngOnInit() {
+
+    this.crudService.getAll().subscribe((data: Books[])=>{
+      console.log(data);
+      this.products = data;
+    })  
   }
 
 }

@@ -1,0 +1,35 @@
+.landing-page-container {
+    height: calc(100% - 180px);
+    min-height: 600px;
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .landing-page-list {
+        max-width: 1120px;
+        padding: 3rem;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-bottom: none;
+
+        .landing-page-header {
+            max-width: 30rem;
+            margin-bottom: 20px;
+        }
+
+        .landing-area-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .card-container {
+                padding: 5px;
+                width: 20%;
+                display: flex;
+                img {
+                    height: 10rem;
+                }
+            }
+        }
+    }
+}
