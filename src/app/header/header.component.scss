@@ -1,10 +1,36 @@
 .header-container {
     height: 80px;
-    background: #bc3232;
+    background: #2d3436;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .list-nav-menu {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        flex-grow: 2;
+        div {
+            text-align: center;
+            height: 100%;
+            padding: 20px;
+            cursor: pointer;
+            opacity: 0.6;
+            &.active {
+                opacity: 1;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .my-account-section {
+        justify-content: end;
+        cursor: pointer;
+    }
 
     .header-container-inner {
         max-width: 1120px;
@@ -12,11 +38,10 @@
         display: flex;
         align-items: center;
         flex-direction: row;
-        justify-content: space-between;
         .header-logo {
-            flex-grow: 1;
             display: flex;
             align-items: center;
+            margin-right: 10px;
             img {
                 height: 4rem;
             }

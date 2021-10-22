@@ -2,12 +2,19 @@
     <div class="header-container-inner">
         <div class="header-logo">
             <img src="/assets/images/book_logo.png" alt="Books logo">
-            <h4 class="header-logo-text">Books library</h4>
+            <h1 class="header-logo-text marginInherit">Books library</h1>
         </div>
-        <div class="header-nav-menu">
+        <!-- <div class="header-nav-menu">
+        </div> -->
+        <div class="list-nav-menu">
+            <div id="home-tab" class="active" (click)="switchTab('home')">HOME</div>
+            <div id="list-tab" (click)="switchTab('list')">BOOK LIST</div>
         </div>
-        <div class="header-search">
-            <input class="search-input" type="text" name="search" placeholder="Search by title,author or genres"/>
+        <div class="my-account-section">
+            <!-- <div class="active">My account</div> -->
         </div>
+        <!-- <div *ngIf="this.sharedService.isLandingPage" class="header-search">
+            <input #search class="search-input" type="text" name="search" (input)="filterBooks(search.value)" placeholder="Search by title"/>
+        </div> -->
     </div>
 </div>

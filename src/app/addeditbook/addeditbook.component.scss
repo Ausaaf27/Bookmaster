@@ -1,0 +1,35 @@
+.add-edit-container {
+    max-width: 1120px;
+    margin: auto;
+    padding: 2rem 0rem;
+    .form-container {
+        border: 1px solid #ddd;
+        box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+        padding: 30px;
+        .form-content {
+            padding: 10px 0px;
+            display: flex;
+            align-items: center;
+            label {
+                min-width: 10rem;
+            }
+
+            input {
+                min-width: 20rem;
+                height: 5vh;
+                outline: none !important;
+                padding-left: 10px;
+            }
+
+            textarea {
+                outline: none !important;
+                padding-left: 10px;
+            }
+        }
+
+        button {
+            padding: 10px 20px;
+            min-width: 5rem;
+        }
+    }
+}

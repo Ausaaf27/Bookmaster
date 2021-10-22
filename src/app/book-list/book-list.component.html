@@ -1,0 +1,60 @@
+<div class="recent-book-container">
+    <div class="action-area">
+        <div class="text-area">
+            <h2 class="recent-page-header primaryColor">BOOK LIST</h2>
+            <div class="recent-small-text">Showing all the books.</div>
+        </div>
+        <div class="header-search">
+            <input #search class="search-input" type="text" name="search" (input)="filterBooks(search.value)" placeholder="Search by title"/>
+        </div>
+        <div class="action">
+            <button type="button" class="btn btn-primary" routerLink="/addeditbook">Add a book</button>
+        </div>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="thumbnailUrl">
+            <th mat-header-cell *matHeaderCellDef> Cover </th>
+            <td mat-cell *matCellDef="let element">
+                <div class="example-card">
+                    <img *ngIf="element?.thumbnailUrl" [title]="element?.shortDescription" mat-card-image
+                        [src]="element?.thumbnailUrl" [alt]="element?.title">
+                    <img *ngIf="!element?.thumbnailUrl" [title]="element?.shortDescription" mat-card-image
+                        src='assets/images/no-image.png' [alt]="element?.title">
+                </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Title </th>
+            <td mat-cell *matCellDef="let element"> {{element?.title}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="authors">
+            <th mat-header-cell *matHeaderCellDef> Author </th>
+            <td mat-cell *matCellDef="let element"> {{element?.authors?.toString()}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="shortDescription">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element?.shortDescription ? element?.shortDescription : 'No
+                description'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <div class="action-menu">
+                    <mat-icon title="Click to edit" (click)="editBook(element, $event)">edit</mat-icon>
+                    <mat-icon title="Click to delete" (click)="delete(element, $event)">delete</mat-icon>
+                </div>
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr title="Click to see details" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[25, 50]" [hidePageSize]=true showFirstLastButtons>
+    </mat-paginator>
+</div>

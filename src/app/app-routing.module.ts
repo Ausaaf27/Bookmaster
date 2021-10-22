@@ -1,21 +1,35 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-// import { HomeComponent } from "./home/home.component";
-// import { BookDetailsComponent } from "./book-details/book-details.component";
-
+import { AddeditbookComponent } from './addeditbook/addeditbook.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { DescriptionComponent } from './description/description.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RecentBookComponent } from './recent-book/recent-book.component';
 
 const routes: Routes = [
-    // { path: "home", component: HomeComponent },
-    // { path: "bookDetails", component: BookDetailsComponent }
-    { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
-  { path: 'landing-page', component: LandingPageComponent }
+  { path: '', redirectTo: 'landing-page', pathMatch: 'full' },
+  {
+    path: 'landing-page', component: LandingPageComponent,
+    children: [
+      {
+        path: '', 
+        redirectTo: 'recent-books', 
+        pathMatch: 'full'
+     },
+      {
+        path: 'recent-books', component: RecentBookComponent
+      },
+      {
+        path: 'book-list', component: BookListComponent
+      }
+    ]
+  },
+  { path: 'description', component: DescriptionComponent },
+  { path: 'addeditbook', component: AddeditbookComponent }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,40 +1,48 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-// import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
-import { BooksComponent } from './books/books.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookDetailsComponent } from './book-details/book-details.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppMaterialModule } from "./app.material-module";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { HttpClientModule, HttpClient} from "@angular/common/http";
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { DescriptionComponent } from './description/description.component';
+import { RecentBookComponent } from './recent-book/recent-book.component';
+import {MatTableModule} from '@angular/material/table';
+import { BookListComponent } from './book-list/book-list.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddeditbookComponent } from './addeditbook/addeditbook.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent,
-    BookDetailComponent,
-    BookDetailsComponent,
     HeaderComponent,
     FooterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    DescriptionComponent,
+    RecentBookComponent,
+    BookListComponent,
+    AddeditbookComponent
   ],
   imports: [
-    BrowserModule,
-    // MatDialogModule,
-    FormsModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    AppMaterialModule,
+    BrowserModule,
+    MatIconModule,
+    AppRoutingModule,
     HttpClientModule,
-    HttpClient
+    MatTableModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,71 @@
+<div class="col-lg-9 col-md-9 col-sm-12 add-edit-container">
+    <div class="text-area">
+        <h1 class="recent-page-header primaryColor marginNone textAlignCenter">Book details</h1>
+        <div class="recent-small-text small-text marginBottomMedium">Please enter all the details properly to submit.</div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 form-container">
+        <form id="book-form" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-content">
+                <label for="title">Title: </label>
+            <input required id="title" type="text" formControlName="title">
+            </div>
+            
+            <div class="form-content">
+                <label for="image-url">Image url: </label>
+            <input required id="image-url" type="text" formControlName="thumbnailUrl">
+            </div>
+            
+            <div class="form-content">
+                <label for="authors">Authors: </label>
+            <input required id="authors" type="text" placeholder="For eg. Author1,Author2" formControlName="authors">
+            </div>
+            
+            <div class="form-content">
+                <label for="categories">Categories: </label>
+            <input required id="categories" type="text" placeholder="For eg. Category1,Category2" formControlName="categories">
+            </div>
+            
+            <div class="form-content">
+                <label for="status">Status: </label>
+            <input required id="status" type="text" formControlName="status">
+            </div>
+            
+            <div class="form-content">
+                <label for="isbn">ISBN: </label>
+            <input required id="isbn" type="text" formControlName="isbn">
+            </div>
+            
+            <div class="form-content">
+                <label for="pagecount">Page count: </label>
+            <input required id="pagecount" type="number" formControlName="pageCount">
+            </div>
+            
+            <div class="form-content">
+                <label for="short-description">Short description: </label>
+            <textarea required id="short-description" name="shortDescription"  formControlName="shortDescription" rows="4" cols="50">
+            </textarea>
+            </div>
+            
+            <div class="form-content">
+                <label for="long-description">Long description: </label>
+            <textarea required id="long-description" name="longDescription"  formControlName="longDescription" rows="4" cols="50">
+            </textarea>
+            </div>
+
+            <div class="form-content">
+                <label for="publishedDate">Published date: </label>
+                <mat-form-field>
+                    <input required matInput [matDatepicker]="picker" formControlName="publishedDate">
+                    <mat-datepicker-toggle id="publishedDate" matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" [disabled]="!bookForm.valid">Add</button>
+            <button type="button" class="btn btn-default" (click)="goToHome()">Cancel</button>
+          </form>
+    </div>
+      
+      
+</div>
