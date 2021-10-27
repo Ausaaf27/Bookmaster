@@ -24,6 +24,9 @@ export class HeaderComponent implements OnInit {
     if (tab === "home") {
       document.getElementById('home-tab').classList.add('active');
       this.router.navigate(['landing-page/recent-books']);
+    } else if (tab === "delete") {
+      document.getElementById('delete-tab').classList.add('active');
+      this.router.navigate(['recently-deleted']);
     } else {
       document.getElementById('list-tab').classList.add('active');
       this.router.navigate(['landing-page/book-list']);

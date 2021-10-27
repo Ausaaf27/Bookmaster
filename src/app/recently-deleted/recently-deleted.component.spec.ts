@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateComponent } from './create.component';
+import { RecentlyDeletedComponent } from './recently-deleted.component';
 
-describe('CreateComponent', () => {
-  let component: CreateComponent;
-  let fixture: ComponentFixture<CreateComponent>;
+describe('RecentlyDeletedComponent', () => {
+  let component: RecentlyDeletedComponent;
+  let fixture: ComponentFixture<RecentlyDeletedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateComponent ]
+      declarations: [ RecentlyDeletedComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateComponent);
+    fixture = TestBed.createComponent(RecentlyDeletedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

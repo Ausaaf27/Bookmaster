@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: "#0000008a";}
+.primaryColor {
+    color: #000000b4;
+}
+
+.marginInherit {
+    margin: inherit !important;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.boldText {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.col-lg-12 {
+    padding: 0;
+}
+
+.marginAllLarge {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.marginNone {
+    margin: none !important;
+}
+
+.marginBottomMedium {
+    margin-bottom: 5px;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.small-text {
+    font-size: 12px;
+}

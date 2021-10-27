@@ -19,6 +19,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatIconModule} from '@angular/material/icon';
+import { RecentlyDeletedComponent } from './recently-deleted/recently-deleted.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatIconModule} from '@angular/material/icon';
     DescriptionComponent,
     RecentBookComponent,
     BookListComponent,
-    AddeditbookComponent
+    AddeditbookComponent,
+    RecentlyDeletedComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -59,11 +59,14 @@ export class BookListComponent implements OnInit {
   public delete(book, event: Event) {
     event.stopPropagation();
     let booklist: bookData[] = JSON.parse(sessionStorage.getItem('booklist'));
+    let deletedBooks: bookData[] = JSON.parse(sessionStorage.getItem('deleted-books')) || [];
+    deletedBooks.push(book);
     booklist.splice(book['_id'], 1);
     booklist.forEach((book, index) => {
       book._id = index;
     })
     sessionStorage.setItem('booklist', JSON.stringify([...booklist]));
+    sessionStorage.setItem('deleted-books', JSON.stringify([...deletedBooks]));
     this.resetTable(booklist);
   }
 
